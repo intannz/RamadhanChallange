@@ -12,24 +12,10 @@ Ini adalah **project HTML + CSS sederhana** yang bernuansa Ramadan lewat tampila
 
 ---
 
-## 🛠️ Struktur File
-RamadhanChallange
-├── css/
-│ └── style.css
-├── img/
-│ └── background.png
-│ └── ramadhan.png
-│
-├── .vscode/
-├── index.html
-└── README.md
-
 ## 🌟 Fitur Utama
 
-✔️ Tampilan web statis yang rapi dan responsif  
+✔️ Tampilan web statis yang rapi
 ✔️ Desain visual yang kamu buat sendiri di Canva  
-✔️ Gampang dipelajari & dikembangin lebih lanjut  
-✔️ Cocok banget buat nambah di portfolio ✨
 
 ---
 
