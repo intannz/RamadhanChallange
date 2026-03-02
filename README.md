@@ -1,6 +1,6 @@
 # 🕌 Ramadhan Challenge
 
-Link live project: [https://ramadhan-challange-iyvw7t56i-intans-projects-1606f678.vercel.app/](https://ramadhan-challange-iyvw7t56i-intans-projects-1606f678.vercel.app/)
+Link live project: [https://ramadhan-challange.vercel.app/](https://ramadhan-challange.vercel.app/)
 
 Desain background & gambar-gambar lainnya saya desain menggunakan Canva 
 
@@ -8,14 +8,7 @@ Desain background & gambar-gambar lainnya saya desain menggunakan Canva
 
 ## 🧠 Tentang Project
 
-Ini adalah **project HTML + CSS sederhana** yang bernuansa Ramadan lewat tampilan visual yang bersih, rapi, dan menarik
-
----
-
-## 🌟 Fitur Utama
-
-✔️ Tampilan web statis yang rapi
-✔️ Desain visual yang kamu buat sendiri di Canva  
+Ini adalah **project HTML + CSS sederhana** yang bernuansa Ramadhan lewat tampilan visual yang bersih, rapi, dan menarik
 
 ---
 
