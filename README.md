@@ -8,7 +8,7 @@ Desain background & gambar-gambar lainnya saya desain menggunakan Canva
 
 ## 🧠 Tentang Project
 
-Ini adalah **project HTML + CSS sederhana** yang bernuansa Ramadhan lewat tampilan visual yang bersih, rapi, dan menarik
+Ini adalah **project HTML, CSS dan JS sederhana** yang bernuansa Ramadhan lewat tampilan visual yang bersih, rapi, dan menarik
 
 ---
 
