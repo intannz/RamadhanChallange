@@ -234,8 +234,8 @@ article h3 {
     color: #2d3436;
     font-size: 0.9rem;
 }
- 
-.target-selector input[type="number"] {
+
+.target-selector select {
     padding: 5px 10px;
     border-radius: 8px;
     border: 1px solid #069786;
@@ -243,8 +243,7 @@ article h3 {
     font-weight: bold;
     outline: none;
     font-family: inherit;
-    text-align: center;
-    width: 80px;
+    cursor: pointer;
 }
 
 .counter-display {

@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const countNumber = document.getElementById("count-number");
     const currentCountText = document.getElementById("current-count");
     const targetDisplay = document.getElementById("target-display");
-    const targetInput = document.getElementById("target");
+    const targetSelect = document.getElementById("target");
     const btnAdd = document.getElementById("btn-add");
     const btnReset = document.getElementById("btn-reset");
     const badgeNotification = document.getElementById("badge-notification");
@@ -35,13 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ubah target
-    targetInput.addEventListener("input", (e) => {
-        let val = parseInt(e.target.value);
-        if (isNaN(val) || val < 1) {
-            target = 1;
-        } else {
-            target = val;
-        }
+    targetInput.addEventListener("change", (e) => {
+        target = parseInt(e.target.value);
         saveData();
         updateUI();
     });
