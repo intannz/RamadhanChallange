@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Dzikir</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dzikir-bg">
+    <nav id="navbar-placeholder"></nav>
+    <main class="counter-container">
+        <section class="counter-box">
+            <header class="counter-header">
+                <h2>Hitung Dzikir</h2>
+                <div class="target-selector">
+                    <label for="target">Target:</label>
+                    <select id="target">
+                        <option value="33">33</option>
+                        <option value="100">100</option>
+                        <option value="1000">1000</option>
+                    </select>
+                </div>
+            </header>
+            <div class="counter-display">
+                <h1 id="count-number">0</h1>
+                <p class="target-text"><span id="current-count">0</span> / <span id="target-display">33</span></p>
+            </div>
+            <div id="badge-notification" class="badge">
+                Alhamdulillah, Target Tercapai!
+            </div>
+            <div class="counter-controls">
+                <button id="btn-add" class="btn-add">+</button>
+                <button id="btn-reset" class="btn-reset">Reset</button>
+            </div>
+        </section>
+    </main>
+    <footer id="footer-placeholder"></footer>
+    <script src="js/components.js"></script>
+    <script src="js/counter.js"></script>
+</body>
+</html>
