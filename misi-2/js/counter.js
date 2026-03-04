@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const countNumber = document.getElementById("count-number");
     const currentCountText = document.getElementById("current-count");
     const targetDisplay = document.getElementById("target-display");
-    const targetSelect = document.getElementById("target");
+    const targetInput = document.getElementById("target");
     const btnAdd = document.getElementById("btn-add");
     const btnReset = document.getElementById("btn-reset");
     const badgeNotification = document.getElementById("badge-notification");
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let count = parseInt(localStorage.getItem("dzikirCount")) || 0;
     let target = parseInt(localStorage.getItem("dzikirTarget")) || 33;
 
-    targetSelect.value = target;
+    targetInput.value = target;
     updateUI();
 
     // tambah dzikir
@@ -35,8 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ubah target
-    targetSelect.addEventListener("change", (e) => {
-        target = parseInt(e.target.value);
+    targetInput.addEventListener("input", (e) => {
+        let val = parseInt(e.target.value);
+        if (isNaN(val) || val < 1) {
+            target = 1;
+        } else {
+            target = val;
+        }
         saveData();
         updateUI();
     });
