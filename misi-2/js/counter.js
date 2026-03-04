@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let count = parseInt(localStorage.getItem("dzikirCount")) || 0;
     let target = parseInt(localStorage.getItem("dzikirTarget")) || 33;
 
-    targetInput.value = target;
+    targetSelect.value = target;
     updateUI();
 
     // tambah dzikir
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ubah target
-    targetInput.addEventListener("change", (e) => {
+    targetSelect.addEventListener("change", (e) => {
         target = parseInt(e.target.value);
         saveData();
         updateUI();
