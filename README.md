@@ -1,6 +1,6 @@
 # 🕌 Ramadhan Challenge
 
-Link live project: [https://ramadhan-challange.vercel.app/](https://ramadhan-challange.vercel.app/)
+Link live project: [https://ramadhanchallange.vercel.app/](https://ramadhanchallange.vercel.app/)
 
 Desain background & gambar-gambar lainnya saya desain menggunakan Canva 
 
