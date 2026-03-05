@@ -18,7 +18,7 @@ Ini adalah **project HTML, CSS dan JS sederhana** yang bernuansa Ramadhan lewat 
 ```bash
 git clone https://github.com/intannz/RamadhanChallange.git
 ```
-2. buka folder misi-2
+2. buka folder misi-3
 3. buka file index.html di browser
 
 ---
