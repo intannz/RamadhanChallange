@@ -1,0 +1,19 @@
+const navbarContent = `
+        <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="doa.html">Do'a Puasa</a></li>
+            <li><a href="dzikir.html">Hitung Dzikir</a></li>
+            <li><a href="zakat.html">Kalkulator Zakat</a></li>
+        </ul>
+`;
+const footerContent = `
+    <p>&copy; 2026 Kumpulan Do'a Ramadhan</p>
+`;
+
+document.addEventListener("DOMContentLoaded", () => {
+    const navPlaceholder = document.getElementById("navbar-placeholder");
+    const footerPlaceholder = document.getElementById("footer-placeholder");
+
+    if (navPlaceholder) navPlaceholder.innerHTML = navbarContent;
+    if (footerPlaceholder) footerPlaceholder.innerHTML = footerContent;
+});

@@ -1,0 +1,863 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.808), rgba(255, 255, 255, 0.668)),
+        url("../img/background.png");
+    background-size: 120% auto; 
+    background-position: 0% 50%;
+    background-repeat: repeat;
+    color: #2d3436;
+    line-height: 1.6;
+    animation: panBackground 30s linear infinite alternate;
+}
+
+/*navbar*/
+nav {
+    background: linear-gradient(to right, #056d61, #069786, #12c5a7);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px #0000001f;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+    color: #fead1b;
+}
+
+/*header*/
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+header p {
+    color: #f9f7f2;
+    opacity: 0.9;
+}
+
+/*banner*/
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 8%;
+    background: radial-gradient(circle at center, #12c4a6, #069786, #056d61);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    min-height: 80vh;
+}
+
+.banner-text {
+    flex: 1;
+    max-width: 550px;
+    margin-left: 20px;
+}
+
+.banner-text h1 {
+    font-family: "Berkshire Swash", serif;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.banner-text p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.banner-img {
+    flex: 1;
+    text-align: right;
+}
+
+.banner-img img {
+    max-width: 450px;
+    width: 100%;
+    padding: 18px 20px 2px 0;
+}
+
+/*banner btn*/
+.cta-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 12px 24px;
+    background-color: #ff7a00;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 122, 0, 0.3);
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.cta-btn:hover {
+    background-color: #e66e00;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 122, 0, 0.4);
+}
+
+.quote {
+    background: radial-gradient(circle at center, #07a18f, #056d61);
+    color: #dff6f2;
+    padding: 20px 5px 20px 5px;
+    width: 100%;
+    margin: 0;
+}
+
+/*fitur homepage*/
+.feature-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #069786;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(6, 151, 134, 0.15);
+}
+
+.feature-card h3 {
+    color: #069786;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    border-bottom: 1px dashed #ff7a00;
+    padding-bottom: 0.8rem;
+}
+
+.feature-card p {
+    color: #2d3436;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.feature-card a {
+    display: inline-block;
+    background-color: #069786;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.feature-card a:hover {
+    background-color: #ff7a00;
+    transform: scale(1.05);
+}
+
+.about-ramadhan {
+    margin-top: 5rem;
+    padding: 3rem 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    border: 2px dashed #13d4b5;
+    text-align: center;
+}
+
+.about-ramadhan .section-title {
+    margin-top: 0;
+}
+
+.about-ramadhan p {
+    color: #2d3436;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/*main page*/
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.section-title {
+    text-align: center;
+    margin: 4rem 0 2rem;
+    color: #069786;
+    position: relative;
+    font-size: 2rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+/*card*/
+article {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px #00000007;
+    border-top: 4px solid #ff7a00;
+}
+
+article:hover {
+    transform: translateY(-5px);
+}
+
+article h3 {
+    color: #069786;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    border-bottom: 1px dashed #ff7a00;
+    padding-bottom: 0.5rem;
+}
+
+/*fitur kumpulan do'a*/
+.arab {
+    font-size: 2rem;
+    text-align: right;
+    direction: rtl;
+    margin-bottom: 1.5rem;
+    line-height: 2.5;
+    color: #2d3436;
+}
+
+.latin {
+    font-style: italic;
+    color: #ff7a00;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.indonesia {
+    font-size: 1rem;
+    color: #2d3436;
+    background: rgba(27, 67, 50, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid #ff7a00;
+}
+
+/*fitur dzikir*/
+.dzikir-main-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.dzikir-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/*card kiri: sticky*/
+.dzikir-sticky-sidebar {
+    position: sticky;
+    top: 100px;
+}
+
+.counter-box {
+    background: #ffffff;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(6, 151, 134, 0.1);
+    width: 100%;
+    border-top: 4px solid #069786;
+}
+
+.counter-header h2 {
+    color: #069786;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.target-selector {
+    margin-bottom: 2rem;
+    color: #2d3436;
+    font-size: 0.9rem;
+}
+
+.target-selector select {
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid #069786;
+    color: #069786;
+    font-weight: bold;
+    outline: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.counter-display {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*lingkaran counter*/
+.circle-counter {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    background: linear-gradient(#ffffff, #ffffff) padding-box,
+                linear-gradient(135deg, #12c5a7, #069786, #ff7a00) border-box;
+    border: 8px solid transparent;
+    box-shadow: 0 10px 25px rgba(6, 151, 134, 0.15);
+}
+
+#count-number {
+    font-size: 5rem;
+    font-weight: 800;
+    color: #069786;
+    line-height: 1;
+    transition: transform 0.1s ease-out;
+}
+
+.pop-anim {
+    transform: scale(1.15);
+}
+
+.target-text {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    font-weight: 600;
+}
+
+.counter-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-add {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #069786, #12c5a7);
+    color: white;
+    font-size: 3rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(6, 151, 134, 0.3);
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-add:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #058273, #069786);
+}
+
+.btn-add:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 10px rgba(6, 151, 134, 0.2);
+}
+
+.btn-reset {
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    margin-top: 15px;
+    padding: 8px 25px;
+    border-radius: 10px;
+    color: #e74c3c;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-reset:hover {
+    background-color: rgba(231, 76, 60, 0.1);
+}
+
+/*mini navbar dzikir*/
+.mini-navbar {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 15px 0;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f0f0f0;
+    position: sticky;
+    top: 55px;
+    background: #ffffff;
+    z-index: 10;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+}
+
+.mini-navbar::-webkit-scrollbar {
+    display: none;
+}
+
+.mini-nav-link {
+    white-space: nowrap;
+    padding: 8px 18px;
+    background: #f2fcfb;
+    color: #069786;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border: 1px solid rgba(6, 151, 134, 0.2);
+    transition: all 0.3s ease;
+}
+
+.mini-nav-link:hover {
+    background: #069786;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(6, 151, 134, 0.2);
+}
+
+.mini-nav-link.active {
+    background: #069786;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(6, 151, 134, 0.2);
+}
+
+.dzikir-item {
+    display: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    animation: fadeInTab 0.4s ease;
+}
+
+.dzikir-item.active {
+    display: block;
+}
+
+/*animasi pindah tab*/
+@keyframes fadeInTab {
+    from { 
+        opacity: 0; 
+        transform: translateY(15px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/*card kanan*/
+.dzikir-list-box {
+    background: #ffffff;
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #ff7a00;
+}
+
+.dzikir-list-box, .dzikir-sticky-sidebar {
+    min-width: 0; 
+}
+
+.dzikir-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.dzikir-item h3 {
+    color: #069786;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+/*notif*/
+.badge {
+    background: #dff6f2;
+    color: #069786;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 1rem auto;
+    width: fit-content;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+}
+
+.badge.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/*kalkulator zakat*/
+.zakat-banner {
+    min-height: 40vh;
+    justify-content: center;
+    text-align: center;
+}
+
+.calc-container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.calc-container .section-title {
+    margin-top: 0;
+}
+
+.zakat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: stretch;
+}
+
+.zakat-box {
+    background: #ffffff;
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.167);
+    border-top: 4px solid #069786;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2d3436;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #069786;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    transition: box-shadow 0.3s ease;
+}
+
+.input-wrapper:focus-within {
+    box-shadow: 0 0 0 3px rgba(6, 151, 134, 0.2);
+}
+
+.currency, .unit {
+    background: rgba(6, 151, 134, 0.1);
+    color: #069786;
+    padding: 12px 15px;
+    font-weight: 700;
+}
+
+.form-control {
+    flex: 1;
+    border: none;
+    padding: 12px 15px;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    color: #2d3436;
+}
+
+select.form-control {
+    border: 1px solid #069786;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.edu-info {
+    background: #fdf8e4;
+    border-left: 4px solid #f1c40f;
+    padding: 12px 15px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.calc-btn {
+    flex: 3; 
+    margin-top: 0;
+    font-size: 1.1rem;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.calc-reset-btn {
+    flex: 1;
+    margin-top: 0;
+    background-color: transparent;
+    color: #e74c3c;
+    border: 2px solid #e74c3c;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.calc-reset-btn:hover {
+    background-color: rgba(231, 76, 60, 0.1);
+}
+
+.result-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.result-box h3 {
+    color: #069786;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.result-details {
+    flex: 1;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    color: #2d3436;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+    gap: 15px;
+}
+
+.result-item span {
+    flex: 1;
+}
+
+.result-item strong {
+    white-space: nowrap;
+    text-align: right;
+}
+
+.badge-status {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.status-hijau { 
+    background-color: #2ecc71; 
+}
+
+.status-abu { 
+    background-color: #95a5a6; 
+
+} 
+.status-merah { 
+    background-color: #e74c3c; 
+}
+
+.final-zakat-wrapper {
+    margin-top: 1.5rem;
+    text-align: center;
+    background: #f2fcfb;
+    padding: 2rem 1rem;
+    border-radius: 15px;
+    border: 2px solid #e0f5f2;
+}
+
+.final-zakat-title {
+    font-size: 1rem;
+    color: #7f8c8d;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.final-zakat-amount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ff7a00;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+/*footer*/
+footer {
+    background-color: #069786;
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 5rem;
+}
+
+/*responsive*/
+@media (max-width: 900px) {
+    .dzikir-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dzikir-sticky-sidebar {
+        position: relative;
+        top: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 850px) {
+    .zakat-grid {
+        grid-template-columns: 1fr;
+    }
+    .final-zakat-amount {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 1.5rem;
+        min-height: auto;
+    }
+
+    .banner-img {
+        margin-top: 2rem;
+        text-align: center;
+        max-width: 300px;
+    }
+
+    .banner-text {
+        max-width: 100%;
+    }
+
+    .banner-text h1 {
+        font-size: 2.5rem;
+        line-height: 1.3;
+    }
+
+    .banner-text p {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    .cta-btn {
+        margin-top: 1.2rem;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .full-width {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 500px) {
+    .final-zakat-amount {
+        font-size: 2rem;
+    }
+    .result-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .result-item strong {
+        text-align: left;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .nav-links {
+        gap: 1rem;
+    }
+    /*homepage*/
+    .feature-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-ramadhan {
+        padding: 2rem 1rem;
+        margin-top: 3rem;
+    }
+}
