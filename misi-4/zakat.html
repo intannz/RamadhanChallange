@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Zakat</title>
+    <link rel="icon" href="img/logo-favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav id="navbar-placeholder"></nav>
+    <header class="banner zakat-banner">
+        <div class="banner-text">
+            <h1>Kalkulator Zakat</h1>
+            <p>Hitung kewajiban zakat Anda dengan mudah dan akurat sesuai syariat.</p>
+        </div>
+    </header>
+    <div class="quote">
+        <marquee behavior="scroll" direction="left">
+            <q>Zakat tidak mengurangi harta, justru mensucikannya</q> &nbsp;&nbsp; • &nbsp;&nbsp; 
+            <q>Bersihkan harta, sucikan jiwa dengan zakat</q> &nbsp;&nbsp; • &nbsp;&nbsp;
+            <q>Harta lebih berkah, hati lebih tenang dengan zakat</q>
+        </marquee>
+    </div>
+    <main class="calc-container">
+        <h2 class="section-title">Hitung Zakat Anda</h2>
+        <div class="zakat-grid">
+            <section class="zakat-box form-section">
+                <div class="form-group">
+                    <label for="jenis-zakat">Pilih Jenis Zakat</label>
+                    <select id="jenis-zakat" class="form-control">
+                        <option value="penghasilan">Zakat Penghasilan</option>
+                        <option value="emas">Zakat Emas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="harga-emas">Harga Emas Saat Ini (Per Gram)</label>
+                    <div class="input-wrapper">
+                        <span class="currency">Rp</span>
+                        <input type="text" inputmode="numeric" id="harga-emas" class="form-control format-rupiah" placeholder="1.200.000">
+                    </div>
+                </div>
+                <div id="form-penghasilan" class="dynamic-form">
+                    <div class="form-group">
+                        <label for="gaji">Pendapatan / Gaji per Bulan</label>
+                        <div class="input-wrapper">
+                            <span class="currency">Rp</span>
+                            <input type="text" inputmode="numeric" id="gaji" class="form-control format-rupiah" placeholder="0">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="penghasilan-lain">Penghasilan Lain per Bulan (Opsional)</label>
+                        <div class="input-wrapper">
+                            <span class="currency">Rp</span>
+                            <input type="text" inputmode="numeric" id="penghasilan-lain" class="form-control format-rupiah" placeholder="0">
+                        </div>
+                    </div>
+                </div>
+                <div id="form-emas" class="dynamic-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="jumlah-emas">Total Emas yang Dimiliki (Gram)</label>
+                        <div class="input-wrapper">
+                            <input type="text" inputmode="numeric" id="jumlah-emas" class="form-control format-rupiah" placeholder="100">
+                            <span class="unit">Gram</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="edu-info">
+                    <p>
+                        <strong>Info:</strong> <br>
+                        Nisab zakat setara dengan 85 gram emas per tahun. Untuk penghasilan bulanan, nisab dibagi 12. 
+                        Jika harta/penghasilan mencapai nisab, maka wajib zakat sebesar 2.5%.
+                    </p>
+                </div>
+                <div class="button-group">
+                    <button id="btn-hitung" class="cta-btn calc-btn">Hitung Zakat</button>
+                    <button id="btn-reset" class="btn-reset calc-reset-btn">Reset</button>
+                </div>
+            </section>
+            <section class="zakat-box result-section">
+                <div id="hasil-kalkulasi" class="result-box">
+                    <h3>Hasil Perhitungan</h3>
+                    <div class="result-details">
+                        <div class="result-item">
+                            <span>Total Harta / Penghasilan:</span>
+                            <strong id="res-total">Rp 0</strong>
+                        </div>
+                        <div class="result-item">
+                            <span id="label-nisab-tahunan">Nilai Nisab (85 Gram Emas):</span>
+                            <strong id="res-nisab-tahunan">Rp 0</strong>
+                        </div>
+                        <div class="result-item" id="row-nisab-bulanan" style="display: none;">
+                            <span>Nilai Nisab Bulanan:</span>
+                            <strong id="res-nisab-bulanan">Rp 0</strong>
+                        </div>
+                        <div class="result-item">
+                            <span>Status:</span>
+                            <span id="res-status" class="badge-status status-abu">Belum Dihitung</span>
+                        </div>
+                    </div>
+                    <div class="final-zakat-wrapper">
+                        <span class="final-zakat-title">Zakat yang Harus Dibayar (2.5%)</span>
+                        <div id="res-zakat" class="final-zakat-amount">Rp 0</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer id="footer-placeholder"></footer>
+    <script src="js/components.js"></script>
+    <script src="js/zakat.js"></script>
+</body>
+</html>

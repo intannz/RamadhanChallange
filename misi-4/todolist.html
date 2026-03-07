@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadhan To Do List</title>
+    <link rel="icon" href="img/logo-favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <nav id="navbar-placeholder"></nav>
+    
+    <header class="banner zakat-banner" style="min-height: 35vh;">
+        <div class="banner-text">
+            <h1>To-Do List Ibadah</h1>
+            <p>Pantau dan tingkatkan konsistensi ibadah harianmu di bulan suci.</p>
+        </div>
+    </header>
+    <div class="quote">
+        <marquee behavior="scroll" direction="left">
+            <q>Ramadhan: Saatnya recharge iman dengan puasa dan detox hati dengan shalat</q> &nbsp;&nbsp; • &nbsp;&nbsp; 
+            <q>Puasa tanpa mengaji seperti taman tanpa bunga. Hiasi harimu dengan Al-Qur'an</q> &nbsp;&nbsp; • &nbsp;&nbsp;
+            <q>Puasa bukan sekadar menahan lapar, tapi menahan diri dari dosa</q>
+        </marquee>
+    </div>
+    <main style="max-width: 800px; margin: 40px auto; padding: 0 1rem;">
+        <section class="todo-banner">
+            <div class="streak-badge" id="streak-display">🔥 0 Hari</div>
+            <div class="progress-circle" id="main-progress-circle">
+                <div class="progress-inner">
+                    <h2 id="main-progress-text">0%</h2>
+                    <span>Progress</span>
+                </div>
+            </div>
+            <div id="motivation-status" class="status-badge status-abu">Belum mulai ibadah hari ini</div>
+        </section>
+        <nav class="todo-mini-navbar">
+            <button class="tab-btn active" data-target="tab-shalat">Shalat Wajib</button>
+            <button class="tab-btn" data-target="tab-quran">Baca Qur'an</button>
+            <button class="tab-btn" data-target="tab-puasa">Puasa</button>
+            <button class="tab-btn" data-target="tab-dzikir">Dzikir</button>
+        </nav>
+        <section class="zakat-box">
+            <div id="tab-shalat" class="todo-content active">
+                <h3 style="color: #069786; margin-bottom: 1rem; border-bottom: 1px dashed #ff7a00; padding-bottom: 0.5rem;">Ceklist Shalat Wajib</h3>
+                <ul class="task-list">
+                    <label class="task-item"><input type="checkbox" class="shalat-check"> <span>Subuh</span></label>
+                    <label class="task-item"><input type="checkbox" class="shalat-check"> <span>Dzuhur</span></label>
+                    <label class="task-item"><input type="checkbox" class="shalat-check"> <span>Ashar</span></label>
+                    <label class="task-item"><input type="checkbox" class="shalat-check"> <span>Maghrib</span></label>
+                    <label class="task-item"><input type="checkbox" class="shalat-check"> <span>Isya</span></label>
+                </ul>
+            </div>
+
+            <div id="tab-quran" class="todo-content">
+                <h3 style="color: #069786; margin-bottom: 1rem; border-bottom: 1px dashed #ff7a00; padding-bottom: 0.5rem;">Target Tilawah Harian</h3>
+                <div class="form-group">
+                    <label>Target (Halaman):</label>
+                    <input type="number" id="quran-target" class="form-control" value="20" min="1">
+                </div>
+                <div class="form-group">
+                    <label>Sudah Dibaca (Halaman):</label>
+                    <input type="number" id="quran-read" class="form-control" value="0" min="0">
+                </div>
+                <div class="quran-progress-bar">
+                    <div class="quran-progress-fill" id="quran-bar"></div>
+                </div>
+                <p id="quran-status-text" style="text-align: right; font-weight: bold; color: #ff7a00;">0% - Ayo mulai baca!</p>
+                <button id="btn-quran-done" class="cta-btn" style="padding: 8px 15px; font-size: 0.9rem; margin-top: 10px;">Tandai Target Selesai</button>
+            </div>
+
+            <div id="tab-puasa" class="todo-content">
+                <h3 style="color: #069786; margin-bottom: 1rem; border-bottom: 1px dashed #ff7a00; padding-bottom: 0.5rem;">Kalender Puasa</h3>
+                <label class="task-item" style="border-color: #069786; background: #f2fcfb;">
+                    <input type="checkbox" id="puasa-today-check"> 
+                    <span style="color: #069786; font-weight: bold;">Saya berpuasa hari ini</span>
+                </label>
+                <div class="calendar-grid" id="puasa-calendar">
+                    </div>
+            </div>
+
+            <div id="tab-dzikir" class="todo-content">
+                <h3 style="color: #069786; margin-bottom: 1rem; border-bottom: 1px dashed #ff7a00; padding-bottom: 0.5rem;">Rutinitas Dzikir</h3>
+                <ul class="task-list">
+                    <label class="task-item"><input type="checkbox" class="dzikir-check"> <span>Dzikir Pagi</span></label>
+                    <label class="task-item"><input type="checkbox" class="dzikir-check"> <span>Dzikir Petang</span></label>
+                    <label class="task-item"><input type="checkbox" class="dzikir-check"> <span>Dzikir Tarawih</span></label>
+                </ul>
+            </div>
+
+            <div class="save-section">
+                <button id="btn-simpan-todo" class="cta-btn btn-simpan">Simpan Progress Hari Ini</button>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer-placeholder"></footer>
+    <script src="js/components.js"></script>
+    <script src="js/todolist.js"></script>
+</body>
+</html>
