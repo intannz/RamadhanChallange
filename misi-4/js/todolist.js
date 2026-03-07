@@ -30,6 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const puasaTodayCheck = document.getElementById('puasa-today-check');
     const puasaCalendar = document.getElementById('puasa-calendar');
 
+    const hariRamadhanText = document.getElementById('hari-ramadhan-text');
+    const puasaBar = document.getElementById('puasa-bar');
+    const puasaStatusText = document.getElementById('puasa-status-text');
+
     // load data
     let todoData = JSON.parse(localStorage.getItem('ramadhanTodo')) || {
         shalat: [false, false, false, false, false],
@@ -82,6 +86,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // puasa (25%)
         const puasaPct = puasaTodayCheck.checked ? 100 : 0;
+
+        let currentDayIdx = todoData.puasaHistory.findIndex(done => !done);
+        let hariKe = currentDayIdx === -1 ? 30 : currentDayIdx + 1;
+        
+        let puasaSelesai = todoData.puasaHistory.filter(d => d).length;
+        
+        if (puasaTodayCheck.checked && currentDayIdx !== -1 && !todoData.puasaHistory[currentDayIdx]) {
+            puasaSelesai += 1;
+        }
+        
+        hariRamadhanText.innerText = `Hari ke-${hariKe} Ramadhan`;
+        puasaBar.style.width = `${(puasaSelesai / 30) * 100}%`;
+        puasaStatusText.innerText = `${puasaSelesai} / 30 Hari Puasa`;
 
         // total
         const totalProgress = Math.round((shalatPct + dzikirPct + quranPct + puasaPct) / 4);

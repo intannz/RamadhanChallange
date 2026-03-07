@@ -71,11 +71,21 @@
             </div>
 
             <div id="tab-puasa" class="todo-content">
-                <h3 style="color: #069786; margin-bottom: 1rem; border-bottom: 1px dashed #ff7a00; padding-bottom: 0.5rem;">Kalender Puasa</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px dashed #ff7a00; padding-bottom: 0.5rem;">
+                    <h3 style="color: #069786; margin: 0;">Kalender Puasa</h3>
+                    <span id="hari-ramadhan-text" style="background: #ff7a00; color: white; padding: 4px 12px; border-radius: 20px; font-weight: bold; font-size: 0.85rem;">Hari ke-1 Ramadhan</span>
+                </div>
+
+                <div class="quran-progress-bar" style="height: 15px; margin-bottom: 5px;">
+                    <div class="quran-progress-fill" id="puasa-bar"></div>
+                </div>
+                <p id="puasa-status-text" style="text-align: right; font-weight: bold; color: #ff7a00; margin-bottom: 1.5rem; font-size: 0.9rem;">0 / 30 Hari Puasa</p>
+
                 <label class="task-item" style="border-color: #069786; background: #f2fcfb;">
                     <input type="checkbox" id="puasa-today-check"> 
                     <span style="color: #069786; font-weight: bold;">Saya berpuasa hari ini</span>
                 </label>
+                
                 <div class="calendar-grid" id="puasa-calendar">
                     </div>
             </div>
@@ -94,7 +104,6 @@
             </div>
         </section>
     </main>
-
     <footer id="footer-placeholder"></footer>
     <script src="js/components.js"></script>
     <script src="js/todolist.js"></script>
