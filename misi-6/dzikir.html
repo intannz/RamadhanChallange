@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Dzikir</title>
+    <link rel="icon" href="img/logo-favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dzikir-bg">
+    <nav id="navbar-placeholder"></nav>
+    <header class="banner zakat-banner">
+        <div class="banner-text">
+            <h1>Dzikir Ramadhan</h1>
+            <p>Bantu menjaga konsistensi dzikir harian Anda selama Ramadhan.</p>
+        </div>
+    </header>
+    <div class="quote">
+        <marquee behavior="scroll" direction="left">
+            <q>Selama kamu mengingat Allah, kamu sedang berdoa, bahkan jika kamu berada di pasar</q> &nbsp;&nbsp; • &nbsp;&nbsp; 
+            <q>Dzikir tidak membuat orang pintar, tetapi membuat orang pintar menjadi bersih fikirannya</q> &nbsp;&nbsp; • &nbsp;&nbsp;
+            <q>Jangan tunggu lapang untuk berzikir, karena hati yang ingat Allah akan selalu dilapangkan</q>
+        </marquee>
+    </div>
+    
+    <main class="dzikir-main-container">
+        <div class="dzikir-grid">
+            
+            <aside class="dzikir-sticky-sidebar">
+                <section class="counter-box">
+                    <header class="counter-header">
+                        <h2>Hitung Dzikir</h2>
+                        <div class="target-selector">
+                            <label for="target">Target:</label>
+                            <select id="target">
+                                <option value="33">33</option>
+                                <option value="100">100</option>
+                                <option value="1000">1000</option>
+                            </select>
+                        </div>
+                    </header>
+                    
+                    <div class="counter-display">
+                        <div class="circle-counter">
+                            <h1 id="count-number">0</h1>
+                        </div>
+                        <p class="target-text"><span id="current-count">0</span> / <span id="target-display">33</span></p>
+                    </div>
+                    
+                    <div id="badge-notification" class="badge">
+                        Alhamdulillah, Target Tercapai!
+                    </div>
+                    
+                    <div class="counter-controls">
+                        <button id="btn-add" class="btn-add">+</button>
+                        <button id="btn-reset" class="btn-reset">Reset</button>
+                    </div>
+                </section>
+            </aside>
+
+            <section class="dzikir-list-box">
+                <h2 class="section-title" style="margin-top: 0; font-size: 1.8rem;">Daftar Dzikir Ramadhan</h2>
+                <p style="margin-bottom: 1rem; color: #555;">Amalan dzikir ringan yang sangat disukai Allah SWT, terutama pada fase turunnya rahmat (10 hari pertama Ramadhan).</p>
+
+                <nav class="mini-navbar">
+                    <a href="#dzikir-1" class="mini-nav-link active">Tahlil</a>
+                    <a href="#dzikir-2" class="mini-nav-link">Tahlil Lengkap</a>
+                    <a href="#dzikir-3" class="mini-nav-link">Tasbih</a>
+                    <a href="#dzikir-4" class="mini-nav-link">Tahmid</a>
+                    <a href="#dzikir-5" class="mini-nav-link">Takbir</a>
+                    <a href="#dzikir-6" class="mini-nav-link">Istighfar</a>
+                    <a href="#dzikir-7" class="mini-nav-link">4 Kalimat</a>
+                    <a href="#dzikir-8" class="mini-nav-link">Tasbih Pujian</a>
+                    <a href="#dzikir-9" class="mini-nav-link">Tasbih Agung</a>
+                    <a href="#dzikir-10" class="mini-nav-link">Ridha</a>
+                </nav>
+
+                <article id="dzikir-1" class="dzikir-item active">
+                    <h3>1. Bacaan Tahlil</h3>
+                    <p class="arab">لَا إِلَهَ إِلَّا اللَّهُ</p>
+                    <p class="latin">"Laa ilaaha illa Allaahu"</p>
+                    <p class="indonesia"><strong>Artinya:</strong> Tidak ada Tuhan (yang berhak disembah) selain Allah.</p>
+                </article>
+
+                <article id="dzikir-2" class="dzikir-item">
+                    <h3>2. Tahlil Lengkap</h3>
+                    <p class="arab">لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيْكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيْر</p>
+                    <p class="latin">"Laa ilaaha illa Allaahu wahdahu laa syariika lah, lahul mulku wa lahul hamdu wa huwa 'ala kulli syai-in qadiir"</p>
+                    <p class="indonesia"><strong>Artinya:</strong> Tidak ada Tuhan (yang berhak disembah) selain Allah semata, tiada sekutu bagi-Nya. Bagi-Nya kerajaan, bagi-Nya segala pujian. Dialah yang Maha Kuasa atas segala sesuatu.</p>
+                </article>
+
+                <article id="dzikir-3" class="dzikir-item">
+                    <h3>3. Bacaan Tasbih</h3>
+                    <p class="arab">سُبْحَانَ اللَّهِ</p>
+                    <p class="latin">"Subhaanallah"</p>
+                    <p class="indonesia"><strong>Artinya:</strong> Maha Suci Allah.</p>
+                </article>
+
+                <article id="dzikir-4" class="dzikir-item">
+                    <h3>4. Bacaan Tahmid</h3>
+                    <p class="arab">الْحَمْدُ لِلَّهِ</p>
+                    <p class="latin">"Alhamdulillah"</p>
+                    <p class="indonesia"><strong>Artinya:</strong> Segala puji bagi Allah.</p>
+                </article>
+
+                <article id="dzikir-5" class="dzikir-item">
+                    <h3>5. Bacaan Takbir</h3>
+                    <p class="arab">اللَّهُ أَكْبَرُ</p>
+                    <p class="latin">"Allahu Akbar"</p>
+                    <p class="indonesia"><strong>Artinya:</strong> Allah Maha Besar.</p>
+                </article>
+
+                <article id="dzikir-6" class="dzikir-item">
+                    <h3>6. Bacaan Istighfar</h3>
+                    <p class="arab">أَسْتَغْفِرُ الله</p>
+                    <p class="latin">"Astaghfirullah"</p>
+                    <p class="indonesia"><strong>Artinya:</strong> Aku memohon ampun kepada Allah.</p>
+                </article>
+
+                <article id="dzikir-7" class="dzikir-item">
+                    <h3>7. Dzikir Empat Kalimat Utama</h3>
+                    <p class="arab">سُبْحَانَ اللَّهِ، وَالْحَمْدُ لِلَّهِ، وَلَا إِلَهَ إِلَّا اللَّهُ، وَاللَّهُ أَكْبَرُ</p>
+                    <p class="latin">"Subhaanallah, wal hamdu lillaah, wa laa ilaaha illa Allah, wallaahu akbar"</p>
+                    <p class="indonesia"><strong>Artinya:</strong> Maha Suci Allah, segala puji bagi-Nya, tidak ada Tuhan selain Allah, dan Allah Maha Besar.<br><br><em>*Bacaan dzikir ini lebih disukai Rasulullah SAW daripada dunia dan seisinya.</em></p>
+                </article>
+
+                <article id="dzikir-8" class="dzikir-item">
+                    <h3>8. Dzikir Tasbih Pujian</h3>
+                    <p class="arab">سُبْحَانَ اللَّهِ وَبِحَمْدِهِ</p>
+                    <p class="latin">"Subhaanallah wa bihamdihi"</p>
+                    <p class="indonesia"><strong>Artinya:</strong> Maha Suci Allah dan dengan memuji kepada-Nya.</p>
+                </article>
+
+                <article id="dzikir-9" class="dzikir-item">
+                    <h3>9. Dzikir Tasbih Agung</h3>
+                    <p class="arab">سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيْمِ</p>
+                    <p class="latin">"Subhaanallah wa bihamdihi, subhaanallaahil 'adzhiim"</p>
+                    <p class="indonesia"><strong>Artinya:</strong> Maha Suci Allah dan dengan memuji kepada-Nya, Maha Suci Allah lagi Maha Agung.<br><br><em>*Dua kalimat ini adalah dzikir yang paling Allah SWT sukai, paling berat timbangannya di akhirat, dan ringan diucapkan. (HR Bukhari & Muslim)</em></p>
+                </article>
+
+                <article id="dzikir-10" class="dzikir-item">
+                    <h3>10. Dzikir Ridha</h3>
+                    <p class="arab">رَضِيْتُ بِاللَّهِ رَبّاً، وَبِالْإِسْلَامِ دِيْنَا، وَبِمُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ رَسُولاً</p>
+                    <p class="latin">"Radhiitu billaahi rabba, wa bil islaami diinan, wa bi muhammadin shallallaahu 'alaihi wa sallama rasuulan"</p>
+                    <p class="indonesia"><strong>Artinya:</strong> Aku rela Allah sebagai Rabb (ku), Islam sebagai agama (ku), dan Nabi Muhammad sebagai rasul (ku).</p>
+                </article>
+
+            </section>
+        </div>
+    </main>
+    <footer id="footer-placeholder"></footer>
+    <script src="js/components.js"></script>
+    <script src="js/counter.js"></script>
+</body>
+</html>

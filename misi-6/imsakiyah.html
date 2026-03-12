@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Imsakiyah Ramadhan</title>
+    <link rel="icon" href="img/logo-favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav id="navbar-placeholder"></nav>
+    <header class="banner zakat-banner" style="min-height: 35vh;">
+        <div class="banner-text">
+            <h1>Jadwal Imsakiyah</h1>
+            <p>Pantau waktu imsak dan shalat harian dengan data yang selalu ter-update.</p>
+        </div>
+    </header>
+    <div class="quote">
+        <marquee behavior="scroll" direction="left">
+            <q>Makan sahur adalah barokah, maka janganlah kalian meninggalkannya</q> &nbsp;&nbsp; • &nbsp;&nbsp; 
+            <q>Disiplin waktu shalat adalah kunci kedisiplinan hidup.</q> &nbsp;&nbsp; • &nbsp;&nbsp; 
+            <q>Jagalah shalatmu, maka Allah akan menjagamu</q>
+        </marquee>
+    </div>
+    <main style="max-width: 1000px; margin: 40px auto; padding: 0 1rem;">
+        <section class="zakat-box">
+            <h2 class="section-title" style="margin-top: 0; font-size: 1.8rem; text-align: center;">Cari Jadwal Kota</h2>
+            <div class="form-group" style="max-width: 400px; margin-bottom: 2rem;">
+                <label for="kota-select">Pilih Kota/Kabupaten:</label>
+                <select id="kota-select" class="form-control">
+                    <option value="1301">DKI Jakarta</option>
+                    <option value="1108">Kota Tangerang Selatan</option>
+                    <option value="1219">Kota Bandung</option>
+                    <option value="1638">Kota Surabaya</option>
+                    <option value="1428">Kota Semarang</option>
+                    <option value="0228">Kota Medan</option>
+                </select>
+            </div>
+
+            <div id="loading-state" class="status-message">
+                <p>⏳ Memuat jadwal imsakiyah...</p>
+            </div>
+            <div id="error-state" class="status-message status-merah" style="display: none; padding: 15px; border-radius: 8px; text-align: center; color: white;">
+                <p>❌ Gagal memuat data jadwal. Silakan periksa koneksi internet atau coba lagi nanti</p>
+            </div>
+
+            <div class="table-responsive" id="table-container" style="display: none;">
+                <table class="imsakiyah-table">
+                    <thead>
+                        <tr>
+                            <th>Tanggal</th>
+                            <th>Imsak</th>
+                            <th>Subuh</th>
+                            <th>Dzuhur</th>
+                            <th>Ashar</th>
+                            <th>Maghrib</th>
+                            <th>Isya</th>
+                        </tr>
+                    </thead>
+                    <tbody id="jadwal-tbody">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer id="footer-placeholder"></footer>
+    <script src="js/components.js"></script>
+    <script src="js/imsakiyah.js"></script>
+</body>
+</html>
