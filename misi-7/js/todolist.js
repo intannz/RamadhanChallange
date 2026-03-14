@@ -34,6 +34,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const puasaBar = document.getElementById('puasa-bar');
     const puasaStatusText = document.getElementById('puasa-status-text');
 
+    const startRamadhan = new Date("2026-02-19");
+    const today = new Date();
+    const diffTime = today - startRamadhan;
+    let hariKe = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
+
+    // Batasi hari 1-30
+    if (hariKe < 1) hariKe = 1;
+    if (hariKe > 30) hariKe = 30;
+    const currentDayIdx = hariKe - 1;
+
     // load data
     let todoData = JSON.parse(localStorage.getItem('ramadhanTodo')) || {
         shalat: [false, false, false, false, false],
@@ -47,6 +57,14 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     function initUI() {
+        const todayStr = new Date().toDateString();
+        if (todoData.lastSaved !== todayStr) {
+            todoData.puasaToday = false;
+            todoData.shalat = [false, false, false, false, false];
+            todoData.dzikir = [false, false, false];
+            todoData.quranRead = 0;
+        }
+
         shalatChecks.forEach((chk, i) => chk.checked = todoData.shalat[i]);
         dzikirChecks.forEach((chk, i) => chk.checked = todoData.dzikir[i]);
         quranTarget.value = todoData.quranTarget;
@@ -58,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
         puasaCalendar.innerHTML = '';
         todoData.puasaHistory.forEach((done, i) => {
             const dayDiv = document.createElement('div');
-            dayDiv.className = `cal-day ${done ? 'done' : ''}`;
+            dayDiv.className = `cal-day ${done ? 'done' : ''} ${i === currentDayIdx ? 'today' : ''}`;
             dayDiv.innerHTML = done ? '✔' : (i + 1);
             puasaCalendar.appendChild(dayDiv);
         });
@@ -85,18 +103,18 @@ document.addEventListener("DOMContentLoaded", () => {
         quranStatusText.innerText = `${Math.round(quranPct)}% - ${quranPct === 100 ? 'Target Tercapai!' : quranPct >= 50 ? 'Hampir selesai!' : 'Masih bisa ditambah'}`;
 
         // puasa (25%)
-        const puasaPct = puasaTodayCheck.checked ? 100 : 0;
+        // Update Text Hari
+        hariRamadhanText.innerText = `Hari ke-${hariKe} Ramadhan`;
 
-        let currentDayIdx = todoData.puasaHistory.findIndex(done => !done);
-        let hariKe = currentDayIdx === -1 ? 30 : currentDayIdx + 1;
-        
+        // Update Progress Puasa
+        const puasaPct = puasaTodayCheck.checked ? 100 : 0;
         let puasaSelesai = todoData.puasaHistory.filter(d => d).length;
         
-        if (puasaTodayCheck.checked && currentDayIdx !== -1 && !todoData.puasaHistory[currentDayIdx]) {
+        // Visualisasi realtime: kalau centang puasa hari ini, bar bertambah
+        if (puasaTodayCheck.checked && !todoData.puasaHistory[currentDayIdx]) {
             puasaSelesai += 1;
         }
-        
-        hariRamadhanText.innerText = `Hari ke-${hariKe} Ramadhan`;
+
         puasaBar.style.width = `${(puasaSelesai / 30) * 100}%`;
         puasaStatusText.innerText = `${puasaSelesai} / 30 Hari Puasa`;
 
@@ -143,31 +161,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Save
     btnSimpan.addEventListener('click', () => {
-        const today = new Date().toDateString();
+        const todayStr = new Date().toDateString();
         const progress = calculateProgress();
 
-        // update data
+        // Update data harian
         todoData.shalat = Array.from(shalatChecks).map(c => c.checked);
         todoData.dzikir = Array.from(dzikirChecks).map(c => c.checked);
-        todoData.quranTarget = parseInt(quranTarget.value);
         todoData.quranRead = parseInt(quranRead.value);
         todoData.puasaToday = puasaTodayCheck.checked;
 
-        // streak & history
-        if (todoData.lastSaved !== today) {
-            let currentDayIdx = todoData.puasaHistory.findIndex(done => !done);
-            if (currentDayIdx === -1) currentDayIdx = 29;
+        // Update history di indeks yang benar (hari ke-24 = index 23)
+        if (todoData.puasaToday) {
+            todoData.puasaHistory[currentDayIdx] = true;
+        }
 
-            if (todoData.puasaToday) {
-                todoData.puasaHistory[currentDayIdx] = true;
-            }
-
-            if (progress >= 50) { 
-                todoData.streak += 1;
-            } else {
-                todoData.streak = 0;
-            }
-            todoData.lastSaved = today;
+        // Logika Streak (hanya bertambah sekali sehari)
+        if (todoData.lastSaved !== todayStr) {
+            if (progress >= 50) todoData.streak += 1;
+            else todoData.streak = 0;
+            todoData.lastSaved = todayStr;
         }
 
         localStorage.setItem('ramadhanTodo', JSON.stringify(todoData));
